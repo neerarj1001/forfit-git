@@ -25,7 +25,9 @@
               prepend-inner-icon="mdi-email"
               required
               outlined
-            ></v-text-field>
+              :rules = "genericRules.emailRules"
+            >
+            </v-text-field>
             <!-- //Email// -->
           </v-card-text>
 
@@ -46,8 +48,16 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import validation from '../../mixins/validation'
 
 export default {
+   data (){
+      return {
+        email:''
+      }
+   },
+  mixins:[ validation ],
+
   components: { Logo }
 }
 </script>

@@ -19,6 +19,7 @@
           required
           outlined
           dense
+          :rules = "genericRules.accountnoRule"
         ></v-text-field>
         <v-text-field
           v-model="ifsc"
@@ -27,6 +28,7 @@
           required
           outlined
           dense
+          :rules = "genericRules.ifscRules"
         ></v-text-field>
 
         <v-text-field
@@ -58,6 +60,8 @@
 </template>
 
 <script>
+import validation from '@/mixins/validation'
+
 export default {
   name: 'BankInfo',
 
@@ -66,6 +70,7 @@ export default {
     accountNumber: '',
     ifsc: '',
     branchName: ''
-  })
+  }),
+  mixins:[ validation ]
 }
 </script>

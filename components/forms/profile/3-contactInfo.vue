@@ -30,15 +30,9 @@
           outlined
           dense
         ></v-text-field>
-
-        <v-text-field
-          v-model="dob"
-          label="Date of Birth"
-          hint="Date of birth as per the Aadhaar"
-          required
-          outlined
-          dense
-        ></v-text-field>
+        <!-- date of birth -->
+        <date dateLabel="Date of Birth"/>
+        <!-- //date of birth// -->
 
         <v-select
           v-model="genderSelect"
@@ -87,6 +81,7 @@
 </template>
 
 <script>
+import date from '~/components/forms/date' 
 export default {
   name: 'ContactInfo',
 
@@ -107,6 +102,9 @@ export default {
     district: '',
     state: '',
     pinCode: ''
-  })
+  }),
+  components: {
+    date
+  }
 }
 </script>

@@ -18,20 +18,24 @@
 
             <!-- Password -->
             <v-text-field
+              v-model="password"
               label="Password"
               name="password"
               prepend-inner-icon="mdi-lock-open"
               type="password"
+              :rules="genericRules.passwordRule"
               outlined
             ></v-text-field>
             <!-- //Password// -->
 
             <!-- Confirm Password -->
             <v-text-field
+            v-model="confirmPassword"
               label="Password (Confirm)"
-              name="password"
+              name="confirmPassword"
               prepend-inner-icon="mdi-lock-open"
               type="password"
+              :rules = "confirmPasswordRule"
               outlined
             ></v-text-field>
             <!-- //Confirm Password// -->
@@ -56,8 +60,18 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import validation from '../../mixins/validation'
 
 export default {
+  data (){
+      return {
+        password:'',
+        confirmPassword:''
+
+      }
+   },
+  mixins:[ validation ],
+
   components: {
     Logo
   }

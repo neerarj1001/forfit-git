@@ -11,7 +11,7 @@
       <template v-slot:activator="{ on }">
         <v-text-field
           v-model="computedDateFormatted"
-          label="Choose starting date "
+          :label="dateLabel"
           hint="DD/MM/YYYY"
           persistent-hint
           append-icon="mdi-calendar-today"
@@ -42,6 +42,8 @@ export default {
     amount: null,
     model: 0
   }),
+  
+  props: ['dateLabel'],
 
   computed: {
     computedDateFormatted() {

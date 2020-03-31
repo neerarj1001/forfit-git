@@ -107,7 +107,10 @@ export default {
     Logo
   },
   data: () => ({
-    terms: ''
+    terms: '',
+    email:'',
+    password: '',
+    confirmPassword:''
   })
 }
 </script>

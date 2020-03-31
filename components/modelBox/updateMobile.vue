@@ -21,6 +21,7 @@
             prepend-inner-icon="mdi-cellphone-iphone"
             required
             outlined
+            :rules = "genericRules.mobileRule"
           ></v-text-field>
         </v-card-text>
 
@@ -41,11 +42,14 @@
 </template>
 
 <script>
+import validation from '../../mixins/validation'
+
 export default {
   data() {
     return {
-      modalMobile: false
+      modalMobile: false,
     }
-  }
+  },
+  mixins:[ validation ],
 }
 </script>
